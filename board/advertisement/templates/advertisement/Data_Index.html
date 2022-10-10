@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Data</title>
+</head>
+<body>
+<center>
+    <h1>Info</h1>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Instrument</th><th>Email</th></tr>
+    {%for event in music%}
+    <tr>
+        <td>{{event.id}}</td>
+        <td>{{event.name}}</td>
+        <td>{{event.instrument}}</td>
+        <td>{{event.email}}</td>
+        <td><a href="update/{{event.id}}">Update</a></td></tr>
+{%endfor%}
+</table>
+</center>
+</body>
+</html>
