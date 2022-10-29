@@ -1,8 +1,8 @@
 from django import forms
-from .models import Musician
+from .models import CalcHistory
 
 
-class UpdateForm(forms.ModelForm):
+class HistoryForm(forms.ModelForm):
     class Meta:
-        model = Musician
-        fields = '__all__'
+        model = CalcHistory
+        fields = ['val1', 'val2', 'operator']

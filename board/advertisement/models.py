@@ -14,11 +14,10 @@ class Musician(models.Model):
         return '%s %s' % (self.name, self.instrument, self.email)
 
 
-class Membership(models.Model):
-    name = models.CharField(max_length=100)
-    date_joined = models.DateField()
-    invite_reason = models.CharField(max_length=64)
-
-    def __str__(self):
-        return self.name, self.date_joined
+class CalcHistory(models.Model):
+    val1 = models.CharField(max_length=50)
+    val2 = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+    result = models.CharField(max_length=100, null=True ,blank=True)
+    operator = models.CharField(max_length=100)
 
