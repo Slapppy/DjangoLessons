@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Response</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'advertisement/css/obj.css' %}">
+</head>
+<body>
+    <div class="result">
+        <table>
+            <tr><th>Значение 1</th><th>Оператор</th><th>Значение 2</th><th>Результат</th></tr>
+        </table>
+
+        {%for object in storage%}
+            <table class="result-item">
+                <tr>
+                    <td>{{object.val1}}</td> <td>{{object.operator}}</td>    <td>{{object.val2}}</td>   <td>{{object.result}}</td>
+                </tr>
+            </table>
+        {% endfor %}
+    </div>
+
+    <div class="links">
+        <a href="/calculate">Вернуться обратно</a>
+    </div>
+</body>
+</html>

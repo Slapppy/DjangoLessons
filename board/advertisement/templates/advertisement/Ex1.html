@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-<form action="calculate" method="post">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="Submit">
-</form>
-
+    <title>Calculate Project</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'advertisement/css/index.css' %}">
 </head>
 <body>
-
+    <div class="wrap">
+        <form action={% url 'calc' %} method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="links">
+        <a href="{% url 'show' %}">Ссылка на Результат</a>
+    </div>
 </body>
 </html>
